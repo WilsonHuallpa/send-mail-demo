@@ -20,7 +20,7 @@ app.post('/send-mail', async (req, res) => {
         let resultado = await transporter.sendMail({
             from: '"Parrilla Turin" <turinparrilla@gmail.com>',
             to: mail,
-            subject: aceptacion ? 'Felicitaciones su cuenta fue aceptada' : 'Disculpa per hemos bloqueado su cuenta',
+            subject: aceptacion ? 'Felicitaciones su cuenta fue aceptada' : 'Disculpa pero hemos bloqueado su cuenta',
             html: `
             <h1>${aceptacion ? 'Felicitaciones' : 'Disculpe'} ${nombreUsuario}</h1>
             <p>Su cuenta fue ${aceptacion ? 'aceptada' : 'rechazada'}</p>
