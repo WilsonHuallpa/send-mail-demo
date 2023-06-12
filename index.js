@@ -1,4 +1,4 @@
-const express =  require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
@@ -14,7 +14,7 @@ app.post('/send-mail', async (req, res) => {
             secure: true,
             auth: {
                 user: "turinparrilla@gmail.com",
-                pass: "turin_parrilla_1234"
+                pass: "rnruqvptulfssvxq"
             }
         });
         let resultado = await transporter.sendMail({
@@ -30,7 +30,7 @@ app.post('/send-mail', async (req, res) => {
         res.json({ ...resultado, seEnvio: true});
     } catch (error) {
         res.json({
-            mensaje: 'No se pudo enviar el mail',
+            mensaje: 'No se pudo enviar el mail' + error,
             seEnvio: false,
         });
     }
