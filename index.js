@@ -13,18 +13,18 @@ app.post('/send-mail', async (req, res) => {
             port: 465,
             secure: true,
             auth: {
-                user: "turinparrilla@gmail.com",
-                pass: "rnruqvptulfssvxq"
+                user: "lostresparrilleros03@gmail.com",
+                pass: "vuowlknbjxxqiztm"
             }
         });
         let resultado = await transporter.sendMail({
-            from: '"Parrilla Turin" <turinparrilla@gmail.com>',
+            from: '"Los Tres Parrilleros " <lostresparrilleros03@gmail.com>',
             to: mail,
             subject: aceptacion ? 'Felicitaciones su cuenta fue aceptada' : 'Disculpa pero hemos bloqueado su cuenta',
             html: `
             <h1>${aceptacion ? 'Felicitaciones' : 'Disculpe'} ${nombreUsuario}</h1>
             <p>Su cuenta fue ${aceptacion ? 'aceptada' : 'rechazada'}</p>
-            <p>Saludos Parrilla Turin </p>
+            <p>Saludos Los Tres Parrilleros</p>
             `,
         });
         res.json({ ...resultado, seEnvio: true});
